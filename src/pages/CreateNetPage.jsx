@@ -26,19 +26,6 @@ const NetListPage = () => {
         <div className="net-list-container">
             <div className="overlay" />
             <div className="net-list-content">
-                <h2 className="section-title">Список сіток</h2>
-
-                {/* Список сіток */}
-                <div className="net-list">
-                    {nets.map((net) => (
-                        <div className="net-item" key={net.id}>
-                            <h3>{net.palette} Сітка</h3>
-                            <p><strong>Розмір:</strong> {net.size}</p>
-                            <p><strong>Тип:</strong> {net.type}</p>
-                        </div>
-                    ))}
-                </div>
-
                 {/* Кнопка для створення нової сітки */}
                 <button
                     className="btn-create"
