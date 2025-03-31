@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "../style.css";
+import Navbar from "../components/Navbar.jsx";
 
 const ReportPage = () => {
-    // Мокові сітки для вибору
     const [nets, setNets] = useState([
         { id: 1, size: "Маленька", color: "Зелена" },
         { id: 2, size: "Середня", color: "Блакитна" },
@@ -25,7 +25,6 @@ const ReportPage = () => {
             photo,
         };
         console.log("Звіт збережено:", report);
-        // Тут можна додати функцію для збереження звіту через API
     };
 
     const handlePhotoChange = (e) => {
@@ -33,6 +32,8 @@ const ReportPage = () => {
     };
 
     return (
+        <>
+            <Navbar/>
         <div className="report-container">
             <div className="overlay" />
             <div className="report-content">
@@ -117,6 +118,7 @@ const ReportPage = () => {
                 </form>
             </div>
         </div>
+        </>
     );
 };
 

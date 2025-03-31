@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../style.css";
 import logo from "../assets/logo.svg";
+import Navbar from "../components/Navbar.jsx";
 
 const ProfilePage = () => {
     const [userData, setUserData] = useState({
@@ -24,6 +25,8 @@ const ProfilePage = () => {
     };
 
     return (
+        <>
+            <Navbar/>
         <div className="profile-page">
             {}
             <div className="overlay" />
@@ -114,6 +117,7 @@ const ProfilePage = () => {
                 </div>
             )}
         </div>
+        </>
     );
 };
 

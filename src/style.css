@@ -670,3 +670,118 @@ body {
 .btn-submit:hover {
   background-color: #8f876b;
 }
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Left section with logo and title */
+.navbar-left-block {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-img {
+  height: 48px;
+  margin-right: 16px;
+}
+
+.navbar-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #d1c9a1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+/* Right section with links and login button */
+.navbar-right-block {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #f2e8c9;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #a39b7c;
+  transform: translateY(-3px);
+}
+
+/* Button styling */
+.navbar-button {
+  background-color: #a39b7c;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-left: 32px;
+}
+
+.navbar-button:hover {
+  background-color: #8f876b;
+  transform: translateY(-3px);
+}
+
+/* Navbar Background Effects */
+.navbar:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-left-block {
+    display: flex;
+    gap: 12px;
+  }
+
+  .navbar-links {
+    display: none;  /* Hide links on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    padding: 16px;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-button {
+    display: none;  /* Hide the button on mobile */
+  }
+}

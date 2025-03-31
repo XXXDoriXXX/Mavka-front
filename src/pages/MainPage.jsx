@@ -23,17 +23,17 @@ const MainPage = () => {
         {
             title: "Допомога на передову",
             text: "Зібрали 15 сіток та передали волонтерам.",
-            image: "/src/assets/news1.jpg"
+            image: "/src/assets/news1.jpeg"
         },
         {
             title: "Новий цех",
             text: "Відкрився ще один пункт плетіння у Львові.",
-            image: "/src/assets/news2.jpg"
+            image: "/src/assets/news2.jpeg"
         },
         {
             title: "Підтримка",
             text: "Отримали нові матеріали для плетіння.",
-            image: "/src/assets/news3.jpg"
+            image: "/src/assets/news3.jpegg"
         },
     ];
     return (

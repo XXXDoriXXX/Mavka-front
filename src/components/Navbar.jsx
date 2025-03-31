@@ -1,28 +1,24 @@
 import React from "react";
+import logo from "../assets/logo.svg"; // Replace with your logo path
 import "../style.css";
-import logo from "../assets/logo.svg";
-import leftBg from "../assets/leftNavbar.svg";
-import rightBg from "../assets/rightNavbar.svg";
 
 const Navbar = () => {
     return (
-        <div className="navbar">
+        <nav className="navbar">
             <div className="navbar-left-block">
-                <img src={leftBg} alt="left" className="navbar-bg" />
-                <img src={logo} alt="logo" className="navbar-logo-img" />
-                <span className="navbar-title">Military nets</span>
+                <img src={logo} alt="Logo" className="navbar-logo-img" />
+                <div className="navbar-title">MAVKA</div>
             </div>
-
             <div className="navbar-right-block">
-                <img src={rightBg} alt="right" className="navbar-bg" />
                 <ul className="navbar-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Other</a></li>
-                    <li><a href="#">Name</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/report">Report</a></li>
+                    <li><a href="/createnet">Net</a></li>
+                    <li><a href="/profile">Profile</a></li>
                 </ul>
-                <div className="navbar-button"></div>
+                <button className="navbar-button">Login</button>
             </div>
-        </div>
+        </nav>
     );
 };
 
