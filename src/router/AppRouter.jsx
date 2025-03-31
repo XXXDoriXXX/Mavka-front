@@ -6,6 +6,7 @@ import MainPage from "../pages/MainPage.jsx";
 import ProfilePage from "../pages/ProfilePage.jsx";
 import ReportPage from "../pages/ReportPage.jsx";
 import CreateNetPage from "../pages/CreateNetPage.jsx";
+import NetListPage from "../pages/NetListPage.jsx";
 
 const AppRouter = () => (
     <BrowserRouter>
@@ -14,6 +15,7 @@ const AppRouter = () => (
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/report" element={<ReportPage />} />
             <Route path="/createnet" element={<CreateNetPage />} />
+            <Route path="/netlist" element={<NetListPage />} />
         </Routes>
     </BrowserRouter>
 );
