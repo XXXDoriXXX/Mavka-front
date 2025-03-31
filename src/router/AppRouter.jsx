@@ -2,6 +2,7 @@ import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import ProfilePage from "../pages/ProfilePage";
 import MainPage from "../pages/MainPage.jsx";
 
 import Login from "../pages/Login.jsx";
@@ -14,6 +15,7 @@ import ReportPage from "../pages/ReportPage.jsx";
 const AppRouter = () => (
     <BrowserRouter>
         <Routes>
+
             <Route path="/" element={<MainPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
