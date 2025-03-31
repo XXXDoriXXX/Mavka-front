@@ -1,98 +1,100 @@
 import React, { useState } from "react";
 import "../style.css";
+import {createNet} from "../services/nets.js";
 
-const NetListPage = () => {
-    // Мокові сітки
-    const [nets, setNets] = useState([
-        { id: 1, palette: "Зимова", size: "3x3", type: "Квадратна" },
-        { id: 2, palette: "Літня", size: "6x6", type: "Ромбічна" },
-        { id: 3, palette: "Осіння", size: "9x9", type: "Квадратна" },
-    ]);
-
-    const [palette, setPalette] = useState("Зимова");
-    const [size, setSize] = useState("3x3");
-    const [type, setType] = useState("Квадратна");
+const CreateNetPage = () => {
+    const [orderId, setOrderId] = useState("");
+    const [type, setType] = useState("ribbon");
+    const [paletteId, setPaletteId] = useState("");
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
+    const [status, setStatus] = useState("planned");
+    const [startedAt, setStartedAt] = useState("");
+    const [completedAt, setCompletedAt] = useState("");
+    const [finalPhotoUrl, setFinalPhotoUrl] = useState("");
+    const [clientRating, setClientRating] = useState("");
+    const [clientComment, setClientComment] = useState("");
+    const [createdAt, setCreatedAt] = useState(new Date().toISOString());
 
     const [showCreateForm, setShowCreateForm] = useState(false);
 
     const handleCreateNet = (e) => {
         e.preventDefault();
-        const newNet = { id: nets.length + 1, palette, size, type };
-        setNets([...nets, newNet]); // Додаємо нову сітку до списку
-        setShowCreateForm(false); // Закриваємо форму після створення
+        const netData = {
+            order_id: orderId,
+            type,
+            pallete_id: paletteId,
+            width,
+            height,
+            status,
+            started_at: startedAt || null,
+            completed_at: completedAt || null,
+            final_photo_url: finalPhotoUrl || null,
+            client_rating: clientRating ? parseInt(clientRating) : null,
+            client_comment: clientComment || null,
+            created_at: createdAt,
+        };
+        console.log("Creating net:", netData);
+        createNet(netData).then(res => {
+            console.log(res);
+        })
     };
 
     return (
         <div className="net-list-container">
-            <div className="overlay" />
-            <div className="net-list-content">
-                {/* Кнопка для створення нової сітки */}
-                <button
-                    className="btn-create"
-                    onClick={() => setShowCreateForm(!showCreateForm)}
-                >
-                    {showCreateForm ? "Закрити форму" : "Створити нову сітку"}
-                </button>
+            <button className="btn-create" onClick={() => setShowCreateForm(!showCreateForm)}>
+                {showCreateForm ? "Закрити форму" : "Створити нову сітку"}
+            </button>
 
-                {/* Форма для створення нової сітки */}
-                {showCreateForm && (
-                    <div className="create-net-form">
-                        <h2 className="section-title">Створити нову сітку</h2>
-                        <form onSubmit={handleCreateNet}>
-                            {/* Кольорова палітра */}
-                            <div className="form-group">
-                                <label htmlFor="palette">Кольорова палітра:</label>
-                                <select
-                                    id="palette"
-                                    value={palette}
-                                    onChange={(e) => setPalette(e.target.value)}
-                                    required
-                                >
-                                    <option value="Зимова">Зимова</option>
-                                    <option value="Літня">Літня</option>
-                                    <option value="Осіння">Осіння</option>
-                                </select>
-                            </div>
+            {showCreateForm && (
+                <form className="create-net-form" onSubmit={handleCreateNet}>
+                    <label>Order ID:</label>
+                    <input type="number" value={orderId} onChange={(e) => setOrderId(e.target.value)} required />
 
-                            {/* Розмір сітки */}
-                            <div className="form-group">
-                                <label htmlFor="size">Розмір:</label>
-                                <select
-                                    id="size"
-                                    value={size}
-                                    onChange={(e) => setSize(e.target.value)}
-                                    required
-                                >
-                                    <option value="3x3">3x3</option>
-                                    <option value="6x6">6x6</option>
-                                    <option value="9x9">9x9</option>
-                                </select>
-                            </div>
+                    <label>Type:</label>
+                    <select value={type} onChange={(e) => setType(e.target.value)}>
+                        <option value="ribbon">Ribbon</option>
+                        <option value="bow">Bow</option>
+                    </select>
 
-                            {/* Тип сітки */}
-                            <div className="form-group">
-                                <label htmlFor="type">Тип сітки:</label>
-                                <select
-                                    id="type"
-                                    value={type}
-                                    onChange={(e) => setType(e.target.value)}
-                                    required
-                                >
-                                    <option value="Квадратна">Квадратна</option>
-                                    <option value="Ромбічна">Ромбічна</option>
-                                </select>
-                            </div>
+                    <label>Palette ID:</label>
+                    <input type="number" value={paletteId} onChange={(e) => setPaletteId(e.target.value)} required />
 
-                            {/* Кнопка створення сітки */}
-                            <button type="submit" className="btn-submit">
-                                Створити сітку
-                            </button>
-                        </form>
-                    </div>
-                )}
-            </div>
+                    <label>Width:</label>
+                    <input type="number" value={width} onChange={(e) => setWidth(parseFloat(e.target.value))} required />
+
+                    <label>Height:</label>
+                    <input type="number" value={height} onChange={(e) => setHeight(parseFloat(e.target.value))} required />
+
+                    <label>Status:</label>
+                    <select value={status} onChange={(e) => setStatus(e.target.value)}>
+                        <option value="planned">Planned</option>
+                        <option value="working">Working</option>
+                        <option value="confirmation">Confirmation</option>
+                        <option value="completed">Completed</option>
+                        <option value="canceled">Canceled</option>
+                    </select>
+
+                    <label>Started At:</label>
+                    <input type="datetime-local" value={startedAt} onChange={(e) => setStartedAt(e.target.value)} />
+
+                    <label>Completed At:</label>
+                    <input type="datetime-local" value={completedAt} onChange={(e) => setCompletedAt(e.target.value)} />
+
+                    <label>Final Photo URL:</label>
+                    <input type="text" value={finalPhotoUrl} onChange={(e) => setFinalPhotoUrl(e.target.value)} />
+
+                    <label>Client Rating:</label>
+                    <input type="number" value={clientRating} onChange={(e) => setClientRating(e.target.value)} />
+
+                    <label>Client Comment:</label>
+                    <textarea value={clientComment} onChange={(e) => setClientComment(e.target.value)} />
+
+                    <button type="submit" className="btn-submit">Створити сітку</button>
+                </form>
+            )}
         </div>
     );
 };
 
-export default NetListPage;
+export default CreateNetPage;

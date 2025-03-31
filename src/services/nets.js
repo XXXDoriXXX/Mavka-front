@@ -8,3 +8,12 @@ export async function getNets() {
         }
     });
 }
+
+export async function createNet(netData) {
+    return await instance.post("/nets", netData, {
+        headers: {
+            Authorization: getAuth(),
+            "Content-Type": "application/json"
+        }
+    });
+}
