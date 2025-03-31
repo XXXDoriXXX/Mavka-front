@@ -8,8 +8,8 @@ export default function Login() {
         e.preventDefault();
         loginRequest(username, password).then(res => {
             console.log(res.data);
-            if (res.data.token) {
-                localStorage.setItem("access_token", `Bearer ${res.data.token}`);
+            if (res.data.access_token) {
+                localStorage.setItem("access_token", `Bearer ${res.data.access_token}`);
                 window.location.href = "/";
             } else {
                 alert("Invalid credentials");

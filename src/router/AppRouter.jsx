@@ -9,6 +9,7 @@ import Signup from "../pages/Signup.jsx";
 import ReportPage from "../pages/ReportPage.jsx";
 import CreateNetPage from "../pages/CreateNetPage.jsx";
 import NetListPage from "../pages/NetListPage.jsx";
+import ProfilePage from "../pages/ProfilePage.jsx";
 
 
 const AppRouter = () => (
