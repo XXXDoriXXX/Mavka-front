@@ -6,8 +6,6 @@ import MainPage from "../pages/MainPage.jsx";
 
 import Login from "../pages/Login.jsx";
 import Signup from "../pages/Signup.jsx";
-
-import ProfilePage from "../pages/ProfilePage.jsx";
 import ReportPage from "../pages/ReportPage.jsx";
 import CreateNetPage from "../pages/CreateNetPage.jsx";
 import NetListPage from "../pages/NetListPage.jsx";
