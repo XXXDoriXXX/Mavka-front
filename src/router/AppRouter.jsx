@@ -5,11 +5,23 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProfilePage from "../pages/ProfilePage";
 import MainPage from "../pages/MainPage.jsx";
 
+import Login from "../pages/Login.jsx";
+import Signup from "../pages/Signup.jsx";
+
+import ProfilePage from "../pages/ProfilePage.jsx";
+import ReportPage from "../pages/ReportPage.jsx";
+
+
 const AppRouter = () => (
     <BrowserRouter>
         <Routes>
 
             <Route path="/" element={<MainPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/report" element={<ReportPage />} />
+
         </Routes>
     </BrowserRouter>
 );
