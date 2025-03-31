@@ -1,25 +1,26 @@
 import React from "react";
+import "../style.css";
 
 const ScheduleTable = ({ data }) => {
     if (!data.length) return <p>Наразі розклад відсутній</p>;
 
     return (
-        <table className="w-full border text-left">
+        <table className="schedule-table">
             <thead>
             <tr>
-                <th className="border p-2">Дата</th>
-                <th className="border p-2">Час</th>
-                <th className="border p-2">Група</th>
-                <th className="border p-2">Викладач</th>
+                <th>Дата</th>
+                <th>Час</th>
+                <th>Група</th>
+                <th>Викладач</th>
             </tr>
             </thead>
             <tbody>
             {data.map((item) => (
                 <tr key={item.id}>
-                    <td className="border p-2">{item.date}</td>
-                    <td className="border p-2">{item.time}</td>
-                    <td className="border p-2">{item.group}</td>
-                    <td className="border p-2">{item.teacher}</td>
+                    <td>{item.date}</td>
+                    <td>{item.time}</td>
+                    <td>{item.group}</td>
+                    <td>{item.teacher}</td>
                 </tr>
             ))}
             </tbody>
