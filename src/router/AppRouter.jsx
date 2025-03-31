@@ -2,7 +2,6 @@ import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import ProfilePage from "../pages/ProfilePage";
 import MainPage from "../pages/MainPage.jsx";
 
 import Login from "../pages/Login.jsx";
