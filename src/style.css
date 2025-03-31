@@ -94,3 +94,121 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+.box {
+  height: 140px;
+  width: 1956px;
+}
+
+.box .group {
+  height: 140px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 1964px;
+}
+
+.box .overlap-group {
+  height: 140px;
+  position: relative;
+  width: 1956px;
+}
+
+.box .rectangle {
+  background-color: var(--collection-1-primary);
+  height: 140px;
+  left: 18px;
+  position: absolute;
+  top: 0;
+  width: 873px;
+}
+
+.box .polygon {
+  height: 140px;
+  left: 595px;
+  position: absolute;
+  top: 0;
+  width: 1361px;
+}
+
+.box .img {
+  height: 140px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 194px;
+}
+
+.box .text-wrapper {
+  color: var(--collection-1-something-else);
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 48px;
+  font-weight: 700;
+  left: 235px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 41px;
+  white-space: nowrap;
+  width: 372px;
+}
+
+.box .component {
+  height: 129px !important;
+  left: 20px !important;
+  position: absolute !important;
+  top: 9px !important;
+  width: 102px !important;
+}
+
+.box .div {
+  color: var(--collection-1-primary);
+  font-family: "Inter-SemiBold", Helvetica;
+  font-size: 56px;
+  font-weight: 600;
+  left: 756px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-shadow: 0px 4px 12px #00000040;
+  top: 41px;
+}
+
+.box .text-wrapper-2 {
+  color: var(--collection-1-primary);
+  font-family: "Inter-SemiBold", Helvetica;
+  font-size: 56px;
+  font-weight: 600;
+  left: 1046px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-shadow: 0px 4px 12px #00000040;
+  top: 41px;
+}
+
+.box .text-wrapper-3 {
+  color: var(--collection-1-primary);
+  font-family: "Inter-SemiBold", Helvetica;
+  font-size: 56px;
+  font-weight: 600;
+  left: 1641px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-shadow: 0px 4px 12px #00000040;
+  top: 42px;
+}
+
+.box .rectangle-2 {
+  background-color: var(--collection-1-second);
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px 2px #00000040;
+  height: 108px;
+  left: 1832px;
+  position: absolute;
+  top: 16px;
+  width: 108px;
+}
+
