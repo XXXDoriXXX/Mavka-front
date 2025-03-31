@@ -12,3 +12,13 @@ export async function loginRequest(username, password) {
         },
     })
 }
+
+export async function signupRequest(username, password, first_name, last_name, group_id) {
+    return await instance.post("/auth/signup", {
+        username,
+        password,
+        first_name,
+        last_name,
+        group_id
+    })
+}
